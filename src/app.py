@@ -31,7 +31,7 @@ result_counter = tkinter.StringVar()
 
 # ウィジェット
 counter_box = ttk.Entry(main_frm, textvariable=input_counter)
-counter_box.insert(tkinter.END, "10")
+counter_box.insert(tkinter.END, "0")
 counter_calc_btn = ttk.Button(main_frm, text="計算", command = calc_prob_set)
 
 # calc result
