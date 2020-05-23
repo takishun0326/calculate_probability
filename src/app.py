@@ -2,14 +2,14 @@ import tkinter
 from tkinter import ttk
 import calc
 
-def menu_init():
-    # menuバー
-    men = tkinter.Menu(main_win)
-    main_win.config(menu=men)
+Option_List_up = ["1","1","1"]
+Option_List_down = ["2", "8","10"]
 
 def calc_func():
-    # calc pow
-    calc_result = calc.calc_probability(1/4, float(btn_counter.get()))
+    # calc pow 1-(up/down)^n
+    updown = float(Option_List_up[int(vari.get())]) / float(Option_List_down[int(vari.get())])
+    print(btn_counter.get())
+    calc_result = calc.calc_probability(updown, float(btn_counter.get()))
     # set result
     result_box.configure(state='nomal')
     result_counter.set(str(calc_result) + '%')
@@ -18,8 +18,8 @@ def calc_func():
 
 def counter_set():
     btn_counter.set(input_counter.get())
-    result_label_txt.set(btn_counter.get() + "回までに出る確率")
     calc_func()
+    result_label_txt.set(btn_counter.get() + "回までに出る確率")
 
 
 def counter_reset():
@@ -29,8 +29,8 @@ def counter_reset():
 
 def counter_cnt():
     btn_counter.set(str(int(btn_counter.get()) + 1))
-    result_label_txt.set(btn_counter.get() + "回までに出る確率")
     calc_func()
+    result_label_txt.set(btn_counter.get() + "回までに出る確率")
 
 
 
@@ -44,10 +44,27 @@ main_frm.grid(column=0, row=0,sticky=tkinter.NSEW, padx=5, pady=5)
 
 
 # パラメータ
+vari = tkinter.StringVar()
 input_counter = tkinter.StringVar()
 btn_counter = tkinter.StringVar()
 result_counter = tkinter.StringVar()
 result_label_txt = tkinter.StringVar()
+
+
+# menuバー
+vari.set(0)
+menu_top = tkinter.Menu(main_win)
+menu_probability_optn = tkinter.Menu(menu_top,tearoff=0)
+
+main_win.configure(menu=menu_top)
+
+# menu 項目追加
+menu_top.add_cascade(label="確率", menu=menu_probability_optn, under=6)
+for L in range(len(Option_List_up)):
+    menu_probability_optn.add_radiobutton(label=Option_List_up[L]+"/"+Option_List_down[L], variable=vari, value=L)
+
+
+
 
 # https://stackoverflow.com/questions/37068708/how-to-change-font-size-in-ttk-button
 s = ttk.Style()
