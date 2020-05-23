@@ -37,7 +37,7 @@ def counter_cnt():
 
 main_win = tkinter.Tk()
 main_win.title("確率計算")
-main_win.geometry("300x160")
+main_win.geometry("360x160")
 
 main_frm = ttk.Frame(main_win)
 main_frm.grid(column=0, row=0,sticky=tkinter.NSEW, padx=5, pady=5)
@@ -48,6 +48,11 @@ input_counter = tkinter.StringVar()
 btn_counter = tkinter.StringVar()
 result_counter = tkinter.StringVar()
 result_label_txt = tkinter.StringVar()
+
+# https://stackoverflow.com/questions/37068708/how-to-change-font-size-in-ttk-button
+s = ttk.Style()
+s.configure('my.TButton', font=('Helvetica', 30),background="#00bfff")
+
 
 # Label
 cnt_label = ttk.Label(main_frm, text="回数")
@@ -64,7 +69,7 @@ counter_reset_btn = ttk.Button(main_frm, text ="リセット", command = counter
 # カウンター
 btn_counter.set(0)
 counter_label = ttk.Label(main_frm, text="カウンター")
-counter_btn = ttk.Button(main_frm, textvariable=btn_counter, command = counter_cnt)
+counter_btn = ttk.Button(main_frm, textvariable=btn_counter, command = counter_cnt, style='my.TButton')
 
 
 # calc result
