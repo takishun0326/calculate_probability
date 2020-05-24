@@ -8,7 +8,6 @@ Option_List_down = ["2", "8","10","100","1024","4096"]
 def calc_func():
     # calc pow 1-(up/down)^n
     updown = 1-float(Option_List_up[int(vari.get())]) / float(Option_List_down[int(vari.get())])
-    print(btn_counter.get())
     calc_result = calc.calc_probability(updown, float(btn_counter.get()))
     # set result
     result_box.configure(state='nomal')

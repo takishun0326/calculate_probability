@@ -1,0 +1,12 @@
+{
+  "probabilities" : [{
+    "key" : 0,
+    "Numerator" : 1,
+    "Denominator" : 4
+  },
+  {
+    "key" : 1,
+    "Numerator" : 1,
+    "Denominator" : 10
+  }]
+}
