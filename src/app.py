@@ -12,7 +12,7 @@ def calc_func():
     calc_result = calc.calc_probability(updown, float(btn_counter.get()))
     # set result
     result_box.configure(state='nomal')
-    result_counter.set(str(calc_result) + '%')
+    result_counter.set("{0:.10f}".format(calc_result) + '%')
     result_box.configure(state='readonly')
 
 
