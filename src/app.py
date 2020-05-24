@@ -1,13 +1,14 @@
 import tkinter
 from tkinter import ttk
 import calc
+import parse_json
 
-Option_List_up = ["1","1","1","1","1","1"]
-Option_List_down = ["2", "8","10","100","1024","4096"]
+# Option_List_up = ["1","1","1","1","1","1"]
+# Option_List_down = ["2", "8","10","100","1024","4096"]
 
 def calc_func():
     # calc pow 1-(up/down)^n
-    updown = 1-float(Option_List_up[int(vari.get())]) / float(Option_List_down[int(vari.get())])
+    updown = 1- parse_json.get_json_value(int(vari.get()))
     calc_result = calc.calc_probability(updown, float(btn_counter.get()))
     # set result
     result_box.configure(state='nomal')
@@ -59,8 +60,10 @@ main_win.configure(menu=menu_top)
 
 # menu 項目追加
 menu_top.add_cascade(label="確率", menu=menu_probability_optn, under=6)
-for L in range(len(Option_List_up)):
-    menu_probability_optn.add_radiobutton(label=Option_List_up[L]+"/"+Option_List_down[L], variable=vari, value=L)
+cnt = 0
+for L in parse_json.get_json():
+    menu_probability_optn.add_radiobutton(label=L, variable=vari, value=cnt)
+    cnt = cnt + 1
 
 
 

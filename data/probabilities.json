@@ -8,5 +8,25 @@
     "key" : 1,
     "Numerator" : 1,
     "Denominator" : 10
+  },
+  {
+    "key" : 2,
+    "Numerator" : 1,
+    "Denominator" : 100
+  },
+  {
+    "key" : 3,
+    "Numerator" : 1,
+    "Denominator" : 1024
+  },
+  {
+    "key" : 4,
+    "Numerator" : 1,
+    "Denominator" : 4096
+  },
+  {
+    "key" : 5,
+    "Numerator" : 1,
+    "Denominator" : 8192
   }]
 }
