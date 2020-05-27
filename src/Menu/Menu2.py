@@ -1,6 +1,6 @@
 import tkinter
 from tkinter import ttk
-import parse_json
+import Parse_json
 
 class Menu2:
 
@@ -17,6 +17,6 @@ class Menu2:
         # menu 項目追加
         menu_top.add_cascade(label="確率", menu=optn, under=6)
         cnt = 0
-        for L in parse_json.get_json():
-            menu_probability_optn.add_radiobutton(label=L, variable=Menu.vari, value=cnt)
+        for L in Parse_json.get_json():
+            optn.add_radiobutton(label=L, variable=Menu2.vari, value=cnt)
             cnt = cnt + 1

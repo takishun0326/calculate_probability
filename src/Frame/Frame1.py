@@ -1,8 +1,11 @@
 import tkinter
 from tkinter import ttk
-import calc
-import parse_json
-import Menu2
+import sys
+sys.path.append('../')
+
+import Calc
+import Parse_json
+from Menu import Menu2
 
 class Frame1:
     def __init__(self, main_frm):
@@ -56,8 +59,8 @@ class Frame1:
 
     def _calc_func(self):
         # calc pow 1-(up/down)^n
-        updown = 1- parse_json.get_json_value(int(menu.Menu2.vari.get()))
-        calc_result = calc.calc_probability(updown, float(self.btn_counter.get()))
+        updown = 1- Parse_json.get_json_value(int(Menu2.Menu2.vari.get()))
+        calc_result = Calc.calc_probability(updown, float(self.btn_counter.get()))
         # set result
         self.result_box.configure(state='nomal')
         self.result_counter.set("{0:.10f}".format(calc_result) + '%')
