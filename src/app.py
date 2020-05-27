@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import ttk
 import frame
-#import menu
+import menu
 
 
 main_win = tkinter.Tk()
@@ -12,8 +12,8 @@ main_frm = ttk.Frame(main_win)
 main_frm.grid(column=0, row=0,sticky=tkinter.NSEW, padx=5, pady=5)
 
 # menu
-#menu = menu.Menu()
-#menu.second_init(main_win)
+menu = menu.Menu()
+menu.second_init(main_win)
 
 # frame
 widget = frame.Wigets(main_frm)
