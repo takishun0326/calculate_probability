@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     main_win = tkinter.Tk()
     main_win.title("確率計算")
-    main_win.geometry("360x160")
+    main_win.geometry("360x200")
 
     # Menu
     menu = Menu.Menu(main_win)
