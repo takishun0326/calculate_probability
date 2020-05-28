@@ -69,6 +69,18 @@ class Frame2():
         self.slash_label.grid(column=1,row=4, padx=10)
         self.Denominator_box.grid(column=1, row=4, sticky = tkinter.E,padx=10)
     def _calc_func(self):
+        if float(self.Denominator_par.get()) == 0:
+            self.Denominator_par.set('1')
+        if float(self.Denominator_par.get()) < 0:
+            if '.' in self.Denominator_par.get():
+                self.Denominator_par.set(str(float(self.Denominator_par.get()) * -1))
+            else :
+                self.Denominator_par.set(str(int(self.Denominator_par.get()) * -1))
+        if float(self.Numerator_par.get()) < 0:
+            if '.' in self.Numerator_par.get():
+                self.Numerator_par.set(str(float(self.Numerator_par.get()) * -1))
+            else :
+                self.Numerator_par.set(str(int(self.Numerator_par.get()) * -1))
 
         value = 1 - float(self.Numerator_par.get())/float(self.Denominator_par.get())
         result = Calc.calc_probability(value, float(self.btn_counter_par.get()))
