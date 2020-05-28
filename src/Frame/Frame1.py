@@ -27,10 +27,10 @@ class Frame1:
         # ウィジェット
         self.counter_box = ttk.Entry(self.main_frm,width=15, textvariable=self.input_counter)
         self.counter_box.insert(tkinter.END, "0")
-        self.counter_calc_btn = ttk.Button(self.main_frm, text="値の更新", command = self._counter_set)
+        self.counter_calc_btn = ttk.Button(self.main_frm, text="更新", command = self._counter_set,width=6)
 
         # リセット
-        self.counter_reset_btn = ttk.Button(self.main_frm, text ="リセット", command = self._counter_reset)
+        self.counter_reset_btn = ttk.Button(self.main_frm, text ="esc", command = self._counter_reset,width=6)
 
         # カウンター
         self.btn_counter.set(0)
@@ -46,10 +46,10 @@ class Frame1:
 
     def position(self):
         # 配置
-        self.cnt_label.grid(column=0, row=0, pady=10)
-        self.counter_box.grid(column=1,row=0,sticky=tkinter.W,padx=5)
-        self.counter_calc_btn.grid(column=1, row=1, sticky = tkinter.W)
-        self.counter_reset_btn.grid(column=1,row=2, sticky=tkinter.W,pady=5)
+        self.cnt_label.grid(column=0, row=1, pady=10)
+        self.counter_box.grid(column=1,row=1,sticky=tkinter.W,padx=5)
+        self.counter_calc_btn.grid(column=1, row=2, sticky = tkinter.NW,padx=6)
+        self.counter_reset_btn.grid(column=1,row=2, sticky=tkinter.NE,padx=6)
 
         self.counter_label.grid(column=2,row=0, sticky=tkinter.W, padx = 5)
         self.counter_btn.grid(column=2, row=1, sticky=tkinter.NSEW, rowspan=2, padx=5)
