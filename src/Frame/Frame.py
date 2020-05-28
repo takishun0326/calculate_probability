@@ -33,3 +33,5 @@ class Frame:
 
     def Frame2(self):
         frame2 = Frame2.Frame2(self.frame2)
+        frame2.widgets()
+        frame2.position()
